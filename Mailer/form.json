@@ -1,0 +1,77 @@
+{
+  "elements": [
+    {
+      "type": "CheckBox",
+      "name": "Active",
+      "caption": "Aktiv"
+    },
+    {
+      "type": "RowLayout",
+      "items": [
+        {
+          "type": "SelectModule",
+          "name": "SMTP",
+          "caption": "SMTP Instanz",
+          "moduleID": "{375EAF21-35EF-4BC4-83B3-C780FD8BD88A}"
+        }
+      ]
+    },
+    {
+      "type": "Label",
+      "caption": " "
+    },
+    {
+      "type": "List",
+      "name": "Recipients",
+      "rowCount": 5,
+      "add": true,
+      "delete": true,
+      "columns": [
+        {
+          "caption": "Aktiviert",
+          "name": "Use",
+          "width": "100px",
+          "add": true,
+          "edit": {
+            "type": "CheckBox"
+          }
+        },
+        {
+          "caption": "Empfänger",
+          "name": "Name",
+          "width": "350px",
+          "add": "",
+          "edit": {
+            "type": "ValidationTextBox"
+          }
+        },
+        {
+          "caption": "E-Mail Adresse",
+          "name": "Address",
+          "width": "auto",
+          "add": "@",
+          "edit": {
+            "type": "ValidationTextBox"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "ValidationTextBox",
+      "name": "Subject",
+      "caption": "Betreff"
+    },
+    {
+      "type": "ValidationTextBox",
+      "name": "Text",
+      "caption": "Nachricht"
+    },
+    {
+      "type": "Button",
+      "caption": "Nachricht senden",
+      "onClick": "MA_SendMessage($id, $Subject, $Text);"
+    }
+  ]
+}
